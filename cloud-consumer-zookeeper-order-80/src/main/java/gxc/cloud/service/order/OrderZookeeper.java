@@ -1,4 +1,4 @@
-package gxc.cloud.service.payment;
+package gxc.cloud.service.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,14 +6,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author GongXincheng
- * @date 2020-03-07 01:17
+ * @date 2020-03-07 02:10
  */
-@EnableDiscoveryClient
 @SpringBootApplication
-public class PaymentService_8002 {
-
+@EnableDiscoveryClient
+public class OrderZookeeper {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentService_8002.class, args);
+        SpringApplication.run(OrderZookeeper.class, args);
     }
-
 }

@@ -23,7 +23,7 @@ public class OrderServerImpl implements OrderServer {
 
     @Override
     public Payment getPaymentById(Long id) {
-        return Objects.requireNonNull(restTemplate.exchange("http://cloud-payment-service/payment/{1}", HttpMethod.GET, null,
+        return Objects.requireNonNull(restTemplate.exchange("http://CLOUD-PAYMENT-SERVICE/payment/{1}", HttpMethod.GET, null,
                 new ParameterizedTypeReference<ServerResponse<Payment>>() {
                 }, id).getBody()).getData();
     }

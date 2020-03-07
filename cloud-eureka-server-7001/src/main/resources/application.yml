@@ -5,13 +5,19 @@ eureka:
   instance:
     # eureka 服务端实例的名称
     hostname: eureka7001.com
+    lease-renewal-interval-in-seconds: 4  # 每隔这个时间会主动心跳一次，默认值为30s
+    lease-expiration-duration-in-seconds: 12 # 设置服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除，一般是lease-renewal-interval-in-seconds的3倍
+
   client:
-    # false 表示不向注册中心注册自己
-    register-with-eureka: false
-    # false 表示不去检索服务
-    fetch-registry: false
+    register-with-eureka: false # false 表示不向注册中心注册自己
+    fetch-registry: false  # false 表示不去检索服务
     service-url:
-      defaultZone: http://eureka7002.com:7002/eureka
+      #defaultZone: http://eureka7002.com:7002/eureka
+      defaultZone: http://eureka7001.com:7001/eureka
+
+  server: #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
+    enable-self-preservation: false   # 关闭EurekaServer的自我保护机制
+    eviction-interval-timer-in-ms: 2000 # 清理间隔（单位毫秒，默认是60*1000）启用主动失效，并且每次主动失效检测间隔为2s
 
 logging:
   level:

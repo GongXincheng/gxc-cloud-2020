@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8004
 
 spring:
   application:
@@ -12,19 +12,15 @@ spring:
     password: root
     username: root
 
+  # 配置注册中心
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7002.com:7002/eureka, http://eureka7001.com:7001/eureka
-  instance:
-    prefer-ip-address: true
-    instance-id: payment-8002
-
 
 management:
   endpoints:

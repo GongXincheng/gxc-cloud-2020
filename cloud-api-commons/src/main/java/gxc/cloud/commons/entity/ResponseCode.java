@@ -1,4 +1,4 @@
-package gxc.cloud.service.payment.entity;
+package gxc.cloud.commons.entity;
 
 import lombok.Getter;
 

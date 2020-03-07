@@ -1,9 +1,11 @@
-package gxc.cloud.service.payment.entity;
+package gxc.cloud.commons.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -15,6 +17,8 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
 public class ServerResponse<T> implements Serializable {
 
     private int code;
@@ -33,8 +37,6 @@ public class ServerResponse<T> implements Serializable {
 
     private T data;
 
-    private ServerResponse() {
-    }
 
     private ServerResponse(int code) {
         this.code = code;

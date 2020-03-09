@@ -19,6 +19,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  jta:
+    atomikos:
+      properties:
+        enable-logging:
 
 
 eureka:
@@ -41,6 +45,16 @@ management:
     health:
       show-details: always
 
+
+# 设置Feign客户端超时时间（openFeign默认支持ribbon）
+ribbon:
+  # 建立连接后 从服务器读取到可用资源所用的时间（首字母必须大写）
+  ReadTimeout: 10000
+  # 建立连接所用的时间，适用于网络状况正常的情况下，两端连接所有时间（首字母必须大写）
+  ConnectTimeout: 2000
+
+
+# Feign的日志级别
 logging:
   level:
-    root: INFO
+    gxc.cloud.service.order.feign: DEBUG

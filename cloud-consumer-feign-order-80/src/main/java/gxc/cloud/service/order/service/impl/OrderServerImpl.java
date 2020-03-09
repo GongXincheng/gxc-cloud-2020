@@ -38,4 +38,9 @@ public class OrderServerImpl implements OrderServer {
     public Map<String, Object> discovery() {
         return paymentFeign.discovery().getData();
     }
+
+    @Override
+    public String feignTimeOut() {
+        return paymentFeign.feignTimeOut();
+    }
 }

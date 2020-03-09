@@ -26,4 +26,6 @@ public interface PaymentFeign {
     @GetMapping("/payment/discovery")
     ServerResponse<Map> discovery();
 
+    @GetMapping("/payment/timeOut")
+    String feignTimeOut();
 }

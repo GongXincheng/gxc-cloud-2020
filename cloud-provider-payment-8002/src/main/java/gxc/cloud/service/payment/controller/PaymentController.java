@@ -66,4 +66,17 @@ public class PaymentController {
         return ServerResponse.ok(result);
     }
 
+    /**
+     * 测试客户端Feign调用超时
+     */
+    @GetMapping("/payment/timeOut")
+    public String feignTimeOut() {
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return port;
+    }
 }

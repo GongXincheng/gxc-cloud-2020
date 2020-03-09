@@ -37,9 +37,15 @@ public class FeignController {
     }
 
     @GetMapping("/feign/payment/discovery")
-    ServerResponse<Map> discovery() {
+    public ServerResponse<Map> discovery() {
         Map<String, Object> result = orderServer.discovery();
         return ServerResponse.ok(result);
     }
 
+
+    @GetMapping("/feign/payment/timeOut")
+    public ServerResponse<String> feignTimeOut() {
+        String result = orderServer.feignTimeOut();
+        return ServerResponse.ok(result);
+    }
 }

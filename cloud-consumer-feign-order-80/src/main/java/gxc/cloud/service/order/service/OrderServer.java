@@ -14,4 +14,6 @@ public interface OrderServer {
     void create(Payment payment);
 
     Map<String, Object> discovery();
+
+    String feignTimeOut();
 }

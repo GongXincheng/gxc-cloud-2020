@@ -1,0 +1,21 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-hystrix
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    prefer-ip-address: true
+
+ribbon:
+  ReadTimeout: 3000
+
+# 开启Hystrix
+feign:
+  hystrix:
+    enabled: true
